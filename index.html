@@ -9,37 +9,21 @@
 </head>
 <body>
     <pre>
-        /*
-        In this kata, you must create a digital root function.
         
-        A digital root is the recursive sum of all the digits in a number. Given n, take the sum of the digits of n. If that value has two digits, continue reducing in this way until a single-digit number is produced. This is only applicable to the natural numbers.
+
+        Your task is to write a function that takes two or more objects and returns a new object which combines all the input objects.
+
+        All input object properties will have only numeric values. Objects are combined together so that the values of matching keys are added together.
         
-        Here's how it works (Ruby example given):
+        An example:
         
-        digital_root(16)
-        => 1 + 6
-        => 7
-        
-        digital_root(942)
-        => 9 + 4 + 2
-        => 15 ...
-        => 1 + 5
-        => 6
-        
-        digital_root(132189)
-        => 1 + 3 + 2 + 1 + 8 + 9
-        => 24 ...
-        => 2 + 4
-        => 6
-        
-        digital_root(493193)
-        => 4 + 9 + 3 + 1 + 9 + 3
-        => 29 ...
-        => 2 + 9
-        => 11 ...
-        => 1 + 1
-        => 2
-        */ 
+        const objA = { a: 10, b: 20, c: 30 }
+        const objB = { a: 3, c: 6, d: 3 }
+        combine(objA, objB) // Returns { a: 13, b: 20, c: 36, d: 3 }
+        The combine function should be a good citizen, so should not mutate the input objects.
+
+
+
     </pre>
 </body>
 </html>
