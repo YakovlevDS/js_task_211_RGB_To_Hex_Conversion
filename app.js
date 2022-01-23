@@ -1,19 +1,27 @@
 // solution_1
-const myLanguages=results=> Object.keys(results)
-.filter(val=>results[val]>59)
-.sort((a,b)=>results[b]-results[a])
-
-// solution_2
-function myLanguages(results) {
-  return Object.keys(results).filter(r => results[r] > 59).sort((a,b) => results[b] - results[a]);
+const nicknameGenerator=name=>{
+  const vowel= ['e','i','u','o','a','j']
+  if (name.length<4 ){
+    return "Error: Name too short"
+  }
+  
+  if (vowel.includes(name[2])) {
+      return name.slice(0,4)
 }
+  return name.slice(0,3)
+}
+// solution_2
 
+const nicknameGenerator = (name) => name.length > 3 
+  ? name.slice(0,  3 + 'aeiou'.includes(name[2])) 
+  : 'Error: Name too short'
 // solution_3
 
-function myLanguages(results) {
-  return Object.entries(results).sort((a,b) => b[1] - a[1]).filter( item => item[1] >= 60).map(item => item[0]);
+function nicknameGenerator(name) {
+  if(name.length <= 3) {return 'Error: Name too short';}
+  return !/[aeiou]/i.test(name[2]) ? name.slice(0,3) : name.slice(0,4);
 }
+// solution_4
+const nicknameGenerator = n => n.length > 3 ? n.replace(/(..[^aeiou]|^.{4}).*/gi, '$1') : 'Error: Name too short';
 
-console.log(myLanguages({"Java" : 10, "Ruby" : 80, "Python" : 65}), ["Ruby", "Python"])
-
-
+console.log(nicknameGenerator("Sayaev"))
