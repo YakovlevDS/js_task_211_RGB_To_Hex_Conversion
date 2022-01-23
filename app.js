@@ -1,41 +1,34 @@
 // solution_1
-const combine = (...params) => params.reduce((a, b) => {
-  for (const x in b) { a[x] = x in a ? a[x] + b[x] : b[x] };
-  return a;
- }, {});
-  
+const findMissing = (arr1, arr2) => {
+  arr1 = arr1.sort();
+  arr2 = arr2.sort();
+  for(let i = 0; i < arr1.length; i++){
+    if(arr1[i] != arr2[i]) return arr1[i];
+  }
+}
 // solution_2
 
-const combine = (...args) =>
-  args.reduce((pre, val) => (Object.keys(val).forEach(v => pre[v] = (pre[v] || 0) + val[v]), pre), {});
+const sum = arr => arr.reduce((a, b) => a + b, 0);
 
+const findMissing = (arr1, arr2) => sum(arr1) - sum(arr2);
 
   // solution_3
+  const findMissing = (arr1, arr2) =>
+  arr1.reduce((pre, val) => pre + val) - arr2.reduce((pre, val) => pre + val, 0);
 
-  function combine() {
-    var obj = {}
-  
-    for (var i = 0; i < arguments.length; i++) {
-          for (var key in arguments[i]) {
-            obj[key] = obj[key] ? obj[key] + arguments[i][key]: arguments[i][key]
-          }
-    }
-  
-    return obj;
-  }
   // solution_4
 
-  const combine = (...o) => (b=>{
-    for(var k in o) for(var i in o[k])
-      b[i] = (i in b) ? b[i] + o[k][i] : o[k][i]; return b;})({});
-
-  // solution_5
-
-  const combine = (...xs) => xs.reduce((a, b) => {
-    const result = {...a}
-    for (const prop in b) {
-      result[prop] = b[prop] + (result[prop] ? result[prop] : 0)
+  function findMissing(arr1, arr2) {
+    return arr1.sort().filter((e,i) => arr2.sort()[i] !== e)[0]
     }
-  
-    return result
-  }, {})
+  // solution_5
+  function findMissing(arr1, arr2) {
+    return arr1.reduce( (s, el) => s + el, 0) - arr2.reduce( (s, el) => s + el, 0);
+  }
+  // solution_6
+
+  const findMissing=(arr1, arr2)=> arr1.sort()
+.filter((e,i) => arr2.sort()[i] !== e)[0]
+
+
+console.log(findMissing([6, 1, 3, 6, 8, 2], [3, 6, 6, 1, 2]) )
