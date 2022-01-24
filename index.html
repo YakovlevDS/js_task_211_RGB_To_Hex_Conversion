@@ -10,29 +10,17 @@
 <body>
     <pre>
         
+The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
 
-        Nickname Generator
+Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
 
-Write a function, nicknameGenerator that takes a string name as an argument and returns the first 3 or 4 letters as a nickname.
+The following are examples of expected output values:
 
-If the 3rd letter is a consonant, return the first 3 letters.
+rgb(255, 255, 255) // returns FFFFFF
+rgb(255, 255, 300) // returns FFFFFF
+rgb(0,0,0) // returns 000000
+rgb(148, 0, 211) // returns 9400D3
 
-nickname("Robert") //=> "Rob"
-nickname("Kimberly") //=> "Kim"
-nickname("Samantha") //=> "Sam"
-If the 3rd letter is a vowel, return the first 4 letters.
-
-nickname("Jeannie") //=> "Jean"
-nickname("Douglas") //=> "Doug"
-nickname("Gregory") //=> "Greg"
-If the string is less than 4 characters, return "Error: Name too short".
-
-Notes:
-
-Vowels are "aeiou", so discount the letter "y".
-Input will always be a string.
-Input will always have the first letter capitalised and the rest lowercase (e.g. Sam).
-The input can be modified
     </pre>
 </body>
 </html>
